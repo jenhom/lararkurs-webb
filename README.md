@@ -1,4 +1,4 @@
-# Utbildning i Webbteknik för lärare
+﻿# Utbildning i Webbteknik för lärare
 
 Samarrangemang mellan Lars Gunther (Keryx) och Thelin
 
@@ -13,6 +13,8 @@ Onsdag 5 mars
    * Utvecklingsverktygen i webbläsaren
    * Validatorer och lint-verktyg
    * Webbteknik.nu
+
+Klockan 15:36 skrev jag till denna rad
 
 Torsdag 6 mars
 
