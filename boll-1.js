@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Utökning av lib
 
         clearRect : function (x, y, width, height, color, log) {
@@ -92,10 +92,29 @@ document.getElementById("stop").onclick = function () {
     this.setAttribute("disabled", "disabled");
 };
 
+// Fort
+document.getElementById("fort").onclick = function () {
+//    ball.totspeed = ball.totspeed + 5;
+// Räknas om när farten ändras
+    ball.xSpeed *= 1.25;
+    ball.ySpeed *= 1.25;
+
+}
+
+// Sakta
+document.getElementById("sakta").onclick = function () {
+//    ball.totspeed = ball.totspeed - 5;
+// Räknas om när farten ändras
+    ball.xSpeed *= 0.8;
+    ball.ySpeed *= 0.8;
+
+}
+
+
 // Lägg till clip för att förhindra bollen att ritas utanför ytan
-// draw.raw().beginPath();
-// draw.raw().rect(field.x, field.y, field.width, field.height);
-// draw.raw().clip();
+ draw.raw().beginPath();
+ draw.raw().rect(field.x, field.y, field.width, field.height);
+ draw.raw().clip();
 
 // Buggfix: Inte kunna lägga på flera timeouts som nu
 

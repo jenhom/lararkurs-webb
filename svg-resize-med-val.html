@@ -5,10 +5,10 @@
   <title>Drag och släpp SVG-cirkel</title>
   <style>
     body {
-    	margin: 0;
+     margin: 0;
     }
     h1, p {
-    	font-family: sans-serif;
+     font-family: sans-serif;
         margin-left: 100px;
     }
     svg {
@@ -18,9 +18,9 @@
         left: 100px;
     }
     circle {
-      	stroke: darkred;
-      	stroke-width: 5;
-        fill: rgba(150,0,0,0.25);
+/*       stroke: darkgreen; */
+       stroke-width: 5;
+/*        fill: rgba(0,150,0,0.5); */
         pointer-events: stroke;
     }
   </style>
@@ -33,8 +33,21 @@
      width="500"
      height="500"
      viewport="0 0 500 500">
-  <circle cx="250" cy="250" r="150" />
+  <circle cx="250" cy="250" r="150" fill="cyan" stroke="magenta"/>
 </svg>
+<form action="" method="post">
+<select id="clrPicker">
+  <option value="cyan">Cyan</option>
+  <option value="green">Green</option>
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="yellow">Yellow</option>
+  <option value="magenta">Magenta</option>
+  <option value="purple">Purple</option>
+  <option value="gray">Gray</option>
+  <option value="brown">Brown</option>
+</select>
+
 <script>
 (function () {
     var the_circle = document.getElementsByTagName("circle")[0];
@@ -43,7 +56,7 @@
         e1.preventDefault();
     }
     the_circle.onmousedown = function (e) {
-	    // Låt cirkeln följa muspekaren
+// Låt cirkeln följa muspekaren
         // Vi använder SVG-elementet som måltaval för mousemove
         this.parentNode.onmousemove = function(e2) {
             // Cirkelns mitt är 350/350 i förhållande till sidan
@@ -54,12 +67,21 @@
             // Cirkeln
             the_circle.setAttribute("r", radie);
         }
-	    // När man klickar igen med muspekaren skall detta sluta
+// När man klickar igen med muspekaren skall detta sluta
         this.onmouseup = function() {
-        	this.parentNode.onmousemove = null;
+         this.parentNode.onmousemove = null;
         }
     }
 }());
+
+var pick = document.getElementById("clrPicker");
+pick.onchange = function() {
+  console.log(pick.value);
+  var the_circle = document.getElementsByTagName("circle")[0];
+  the_circle.setAttribute("fill", pick.value );
+  the_circle.setAttribute("stroke", "dark" + pick.value);
+
+}
 </script>
 </body>
 </html>
